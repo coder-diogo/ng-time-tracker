@@ -15,7 +15,7 @@ addons:
       - google-chrome-stable
 
 script:
-  yarn test:cov --browsers=ChromeHeadlessNoSandbox
+  yarn test --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 # Report coverage
 after_success:
   - yarn global add codecov
