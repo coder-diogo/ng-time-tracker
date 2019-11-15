@@ -19,4 +19,4 @@ script:
 # Report coverage
 after_success:
   - yarn global add codecov
-  - "codecov"
+  - codecov
