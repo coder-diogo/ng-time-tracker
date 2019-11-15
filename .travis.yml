@@ -1,0 +1,22 @@
+dist: trusty
+sudo: false
+
+language: node_js
+node_js:
+  - "node"
+  - "lts/*"
+  - "10"
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+script:
+  yarn test:cov --browsers=ChromeHeadlessNoSandbox
+# Report coverage
+after_success:
+  - yarn global add codecov
+  - "codecov"
